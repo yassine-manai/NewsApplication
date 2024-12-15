@@ -34,9 +34,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.title.setText(article.getTitle());
         holder.description.setText(article.getDescription());
 
-        // Load image with Glide or Picasso
-        Picasso.get().load(article.getUrlToImage()).into(holder.image);
+        // Load image using Picasso
+        Picasso.get().load(article.getUrlToImage()).placeholder(R.drawable.ic_launcher_foreground).into(holder.image);
 
+        // Handle item click
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), NewsDetailsActivity.class);
             intent.putExtra("title", article.getTitle());

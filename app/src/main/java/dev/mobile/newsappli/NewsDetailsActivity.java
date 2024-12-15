@@ -15,7 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.squareup.picasso.Picasso;
 
 public class NewsDetailsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +37,4 @@ public class NewsDetailsActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share news via"));
         });
     }
-
 }

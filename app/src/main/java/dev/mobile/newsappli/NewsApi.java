@@ -5,9 +5,11 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface NewsApi {
-    @GET("v2/top-headlines")
+    @GET("v2/everything")
     Call<NewsResponse> getNews(
-            @Query("category") String category,
+            @Query("q") String query,
+            @Query("from") String from,
+            @Query("sortBy") String sortBy,
             @Query("apiKey") String apiKey
     );
 }
